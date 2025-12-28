@@ -1,16 +1,113 @@
-# React + Vite
+# Happy New Year 🎉
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, interactive New Year celebration web application built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ **Festive Animations**
+- Floating balloon animations
+- Confetti effects
+- Smooth fade-up transitions
+- Interactive UI elements
 
-## React Compiler
+💬 **Multiple Message Cards**
+- Multiple customizable greeting cards
+- Responsive design
+- Beautiful gradient backgrounds
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎨 **Modern Design**
+- Built with Tailwind CSS v4
+- Smooth motion animations using Framer Motion
+- Responsive and mobile-friendly
 
-## Expanding the ESLint configuration
+⚡ **High Performance**
+- Vite for fast development and builds
+- React 19 for latest features
+- HMR (Hot Module Replacement) for instant updates
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React** 19.2.0 - UI library
+- **Vite** 7.2.4 - Build tool and dev server
+- **Tailwind CSS** 4.1.18 - Utility-first CSS framework
+- **Framer Motion** 12.23.26 - Animation library
+- **ESLint** - Code quality
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd HappyNewYear
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Balloons/          # Balloon animation component
+│   ├── Button/            # Reusable button component
+│   ├── Card/              # Message card components
+│   ├── Confetti/          # Confetti effect component
+│   ├── FloatingDecorations/ # Floating animation elements
+│   └── WishingPage/       # Main wishing page
+├── assets/                # Static assets
+├── App.jsx               # Main app component
+├── index.css            # Global styles and Tailwind directives
+└── main.jsx             # Application entry point
+```
+
+## Development
+
+The project uses:
+- **Hot Module Replacement (HMR)** for instant updates while coding
+- **ESLint** for code quality with React best practices
+- **Tailwind CSS** for utility-first styling
+
+To lint your code:
+```bash
+npm run lint
+```
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized build in the `dist/` folder ready for deployment.
+
+## Browser Support
+
+Works on all modern browsers that support ES2020 and React 19.
+
+## License
+
+MIT
