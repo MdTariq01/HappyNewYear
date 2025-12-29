@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import React from 'react'
 import Card from "./components/Card/Card";
@@ -11,9 +11,38 @@ import Balloons from "./components/Bullons/Balloons";
 import Confetti from "./components/Confetti/Confetti";
 import FloatingDecorations from "./components/FloatingDecorations/FloatingDecorations";
 
+const friendsData = {
+  arth: { name: "Arth", photoPath: "/src/assets/Arth.jpeg" },
+  aakarsh: { name: "Aakarsh", photoPath: "/src/assets/Aakarsh.png" },
+  tanya: { name: "Tanya", photoPath: "/src/assets/Tanya.jpeg" },
+  kriti: { name: "Kriti", photoPath: "/src/assets/kriti.jpeg" }
+};
+
 function App() {
   const [step, setStep] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [friendName, setFriendName] = useState("Friend");
+
+  // Get friend name from URL parameter
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlFriend = params.get("friend")?.toLowerCase();
+    
+    if (urlFriend && friendsData[urlFriend]) {
+      setFriendName(friendsData[urlFriend].name);
+    }
+  }, []);
+
+  // Get photo path for the current friend
+  const getPhotoPath = () => {
+    const params = new URLSearchParams(window.location.search);
+    const urlFriend = params.get("friend")?.toLowerCase();
+    
+    if (urlFriend && friendsData[urlFriend]) {
+      return friendsData[urlFriend].photoPath;
+    }
+    return "/src/assets/Arth.jpeg"; 
+  };
 
   const handleNext = (nextStep) => {
     setShowConfetti(true);
@@ -50,7 +79,7 @@ function App() {
       <div className="relative h-full w-full flex items-center justify-center">
         <AnimatePresence mode="wait">
           {step === 0 && (
-            <Card key="card-1" onNext={() => handleNext(1)} />
+            <Card key="card-1" friendName={friendName} onNext={() => handleNext(1)} />
           )}
 
           {step === 1 && (
@@ -68,7 +97,7 @@ function App() {
             <Balloons key="balloons" />
           )}
           {step === 4 && (
-            <WishingPage key="card-5" onNext={() => setStep(5)} />
+            <WishingPage key="card-5" friendName={friendName} photoPath={getPhotoPath()} onNext={() => setStep(5)} />
           )}
         </AnimatePresence>
       </div>

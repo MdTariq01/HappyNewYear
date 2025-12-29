@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Confetti from "../Confetti/Confetti";
 
-const WishingPage = ({ onNext }) => {
+const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/src/assets/Arth.jpeg" }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [audioStarted, setAudioStarted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  const fullText = `Happy New Year, Arth! 💖
+  const fullText = `Happy New Year, ${friendName}! 💖
 
 May this year bring you:
 ✨ peace when things get loud
@@ -131,7 +131,7 @@ I'm really glad you exist 🌷`;
             }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <img className="w-full h-full object-contain" src="/src/assets/Arth.jpeg" alt="Special photo" />
+            <img className="w-full h-full object-cover" src={photoPath} alt="Special photo" />
           </motion.div>
 
           {/* Click overlay text (before click) */}

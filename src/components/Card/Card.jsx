@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../Button/Button";
 import React from 'react'
-const Card = ({ onNext }) => {
+const Card = ({ onNext, friendName = "Friend" }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,7 +56,7 @@ const Card = ({ onNext }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                Hey Arth ✨
+                Hey {friendName} ✨
               </motion.p>
               <motion.p
                 className="text-lg md:text-xl text-[#654321] font-medium"
