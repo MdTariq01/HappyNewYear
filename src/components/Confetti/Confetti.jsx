@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import React from 'react'
 const colors = [
-  "hsl(38 90% 60%)",   // Gold
-  "hsl(340 60% 65%)",  // Rose
-  "hsl(30 80% 55%)",   // Amber
-  "hsl(45 100% 75%)",  // Light gold
-  "hsl(280 60% 65%)",  // Lavender
-  "hsl(180 70% 60%)",  // Cyan
-  "hsl(0 100% 70%)",   // Pink
-  "hsl(60 100% 70%)",  // Yellow
+  "hsl(38 90% 60%)",
+  "hsl(340 60% 65%)",
+  "hsl(30 80% 55%)",
+  "hsl(45 100% 75%)",
+  "hsl(280 60% 65%)",
+  "hsl(180 70% 60%)",
+  "hsl(0 100% 70%)",
+  "hsl(60 100% 70%)",
 ];
 
 const Confetti = ({ isActive, count = 60 }) => {

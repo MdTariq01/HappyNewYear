@@ -23,7 +23,6 @@ function App() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [friendName, setFriendName] = useState("Friend");
 
-  // Get friend name from URL parameter
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const urlFriend = params.get("friend")?.toLowerCase();
@@ -33,7 +32,6 @@ function App() {
     }
   }, []);
 
-  // Get photo path for the current friend
   const getPhotoPath = () => {
     const params = new URLSearchParams(window.location.search);
     const urlFriend = params.get("friend")?.toLowerCase();
@@ -54,10 +52,7 @@ function App() {
 
   return (
     <div className="h-screen w-full overflow-hidden relative">
-      {/* Enhanced background with animated gradient */}
       <div className="fixed inset-0 bg-linear-to-br from-[#F5AFAF] via-[#FFB6C1] to-[#FFC0CB]" />
-      
-      {/* Additional decorative overlay */}
       <motion.div
         className="fixed inset-0 bg-linear-to-t from-[#FFE4E1] via-transparent to-transparent opacity-40"
         animate={{
@@ -70,12 +65,8 @@ function App() {
         }}
       />
 
-      {/* Floating decorations - visible on all pages */}
       <FloatingDecorations />
-      
-      {/* Confetti overlay */}
       <Confetti isActive={showConfetti} count={100} />
-      
       <div className="relative h-full w-full flex items-center justify-center">
         <AnimatePresence mode="wait">
           {step === 0 && (

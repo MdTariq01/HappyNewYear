@@ -7,7 +7,6 @@ const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/src/assets/A
   const [displayedText, setDisplayedText] = useState("");
   const [audioStarted, setAudioStarted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-
   const fullText = `Happy New Year, ${friendName}! 💖
 
 May this year bring you:
@@ -16,8 +15,6 @@ May this year bring you:
 ✨ joy even in small moments
 
 I'm really glad you exist 🌷`;
-
-  // Typewriter effect
   useEffect(() => {
     if (!isClicked) return;
 
@@ -35,14 +32,10 @@ I'm really glad you exist 🌷`;
   }, [isClicked]);
 
   // Start background music on first click
-  useEffect(() => {
-    if (isClicked && !audioStarted) {
       setAudioStarted(true);
       // Optional: Add background music here
       // You can add an audio element if you have a music file
-    }
-  }, [isClicked, audioStarted]);
-
+    
   const handlePhotoClick = () => {
     setIsClicked(true);
   };
@@ -58,7 +51,6 @@ I'm really glad you exist 🌷`;
   const FloatingHeart = ({ delay, duration, x }) => (
     <motion.div
       className="absolute text-2xl"
-      initial={{ y: "100vh", x, opacity: 0 }}
       animate={{ y: "-100vh", opacity: [0, 1, 0] }}
       transition={{ delay, duration, ease: "linear", repeat: Infinity }}
     >
@@ -71,7 +63,6 @@ I'm really glad you exist 🌷`;
     <motion.div
       className="absolute text-xl"
       initial={{ y: "100vh", x, opacity: 0 }}
-      animate={{ y: "-100vh", opacity: [0, 1, 0] }}
       transition={{ delay, duration, ease: "linear", repeat: Infinity }}
     >
       ✨
@@ -94,10 +85,7 @@ I'm really glad you exist 🌷`;
       {/* Floating decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[0, 1, 2, 3].map((i) => (
-          <FloatingHeart key={`heart-${i}`} delay={i * 3.1} duration={5}
-            x={(Math.random() - 0.5) * window.innerWidth * 1.5} />
-        ))}
-        {[0, 1, 2, 3].map((i) => (
+      <div className="absolute inset-0 bg-gradient-to-br from-rose-100 via-pink-100 to-red-100" />
           <FloatingSparkle
             key={`sparkle-${i}`}
             delay={i * 3}
@@ -123,7 +111,6 @@ I'm really glad you exist 🌷`;
         >
             
           {/* Placeholder gradient - replace with actual photo */}
-          <motion.div
             className="w-full  h-full bg-gradient-to-br from-rose-300 via-pink-300 to-red-300 flex items-center justify-center text-white text-xl"
             animate={{
               filter: isClicked ? "blur(0px)" : "blur(10px)",
@@ -131,9 +118,7 @@ I'm really glad you exist 🌷`;
             }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <img className="w-full h-full object-cover" src={photoPath} alt="Special photo" />
-          </motion.div>
-
+          
           {/* Click overlay text (before click) */}
           {!isClicked && (
             <motion.div
@@ -144,7 +129,6 @@ I'm really glad you exist 🌷`;
               }}
               transition={{
                 duration: 2,
-                repeat: Infinity,
               }}
             >
               <p className="text-lg font-bold px-6">Click to reveal 💝</p>
@@ -163,7 +147,6 @@ I'm really glad you exist 🌷`;
             <motion.div
               className="bg-gradient-to-r from-white/90 via-pink-50/90 to-white/90 backdrop-blur-md rounded-2xl p-10 shadow-xl border-2 border-white"
               animate={{
-                boxShadow: [
                   "0 0 20px rgba(255,182,193,0.3)",
                   "0 0 40px rgba(255,182,193,0.5)",
                   "0 0 20px rgba(255,182,193,0.3)",

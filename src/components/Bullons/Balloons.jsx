@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const colors = [
-  "hsl(38 90% 60%)",    // Gold
-  "hsl(340 60% 68%)",   // Rose
-  "hsl(30 85% 60%)",    // Amber
-  "hsl(280 65% 68%)",   // Lavender
-  "hsl(200 75% 62%)",   // Sky blue
-  "hsl(0 100% 65%)",    // Red
-  "hsl(280 80% 72%)",   // Purple
+  "hsl(38 90% 60%)",
+  "hsl(340 60% 68%)",
+  "hsl(30 85% 60%)",
+  "hsl(280 65% 68%)",
+  "hsl(200 75% 62%)",
+  "hsl(0 100% 65%)",
+  "hsl(280 80% 72%)",
 ];
 
 const Balloons = ({ count = 18 }) => {
@@ -54,7 +54,6 @@ const Balloons = ({ count = 18 }) => {
             viewBox="0 0 50 70"
             fill="none"
           >
-            {/* Outer balloon glow */}
             <defs>
               <filter id={`glow-${balloon.id}`}>
                 <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -71,7 +70,6 @@ const Balloons = ({ count = 18 }) => {
               </linearGradient>
             </defs>
 
-            {/* Balloon body with gradient */}
             <ellipse
               cx="25"
               cy="22"
@@ -83,7 +81,6 @@ const Balloons = ({ count = 18 }) => {
             />
 
             {/* Shine effect */}
-            <ellipse
               cx="17"
               cy="12"
               rx="7"
@@ -93,7 +90,6 @@ const Balloons = ({ count = 18 }) => {
             />
 
             {/* Secondary shine */}
-            <ellipse
               cx="32"
               cy="28"
               rx="4"
@@ -104,10 +100,7 @@ const Balloons = ({ count = 18 }) => {
 
             {/* Knot */}
             <polygon points="25,46 22,50 28,50" fill={balloon.color} />
-
-            {/* String */}
-            <path
-              d="M25 50 Q23 58 25 68"
+<polygon points="25,46 22,50 28,50" fill={balloon.color} />3 58 25 68"
               stroke="rgba(0,0,0,0.2)"
               strokeWidth="1.5"
               fill="none"

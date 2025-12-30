@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React from 'react'
 const FloatingDecorations = () => {
-  // Floating hearts component
   const FloatingHeart = ({ delay, duration, x }) => (
     <motion.div
       className="absolute text-3xl drop-shadow-lg"
@@ -13,7 +12,6 @@ const FloatingDecorations = () => {
     </motion.div>
   );
 
-  // Floating sparkles component
   const FloatingSparkle = ({ delay, duration, x }) => (
     <motion.div
       className="absolute text-2xl drop-shadow-lg"
@@ -25,7 +23,6 @@ const FloatingDecorations = () => {
     </motion.div>
   );
 
-  // Floating flower component
   const FloatingFlower = ({ delay, duration, x }) => (
     <motion.div
       className="absolute text-2xl drop-shadow-lg"
@@ -40,8 +37,7 @@ const FloatingDecorations = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-10">
       {/* Hearts */}
-      {[0, 1, 2, 3, 4].map((i) => (
-        <FloatingHeart
+      { <FloatingHeart
           key={`heart-${i}`}
           delay={i * 2.5}
           duration={6}
@@ -49,8 +45,6 @@ const FloatingDecorations = () => {
         />
       ))}
       
-      {/* Sparkles */}
-      {[0, 1, 2, 3, 4].map((i) => (
         <FloatingSparkle
           key={`sparkle-${i}`}
           delay={i * 2.3}
@@ -60,8 +54,6 @@ const FloatingDecorations = () => {
       ))}
       
       {/* Flowers */}
-      {[0, 1, 2, 3].map((i) => (
-        <FloatingFlower
           key={`flower-${i}`}
           delay={i * 3}
           duration={7}
