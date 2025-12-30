@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Confetti from "../Confetti/Confetti";
-import songFile from "../../assets/song.mpeg?url";
+import songFile from  "../../../public/Photos/song.mpeg?url"
 
 const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/assets/Arth.jpeg" }) => {
   const [isClicked, setIsClicked] = useState(false);
