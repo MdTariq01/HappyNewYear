@@ -12,10 +12,10 @@ import Confetti from "./components/Confetti/Confetti";
 import FloatingDecorations from "./components/FloatingDecorations/FloatingDecorations";
 
 const friendsData = {
-  arth: { name: "Arth", photoPath: "public/Photos/Arth.jpeg" },
-  aakarsh: { name: "Aakarsh", photoPath: "public/Photos/Aakarsh.png" },
-  tanya: { name: "Tanya", photoPath: "public/Photos/Tanya.jpeg" },
-  kriti: { name: "Kriti", photoPath: "public/Photos/Kriti.jpeg" }
+  arth: { name: "Arth", photoPath: "/Photos/Arth.jpeg" },
+  aakarsh: { name: "Aakarsh", photoPath: "/Photos/Aakarsh.png" },
+  tanya: { name: "Tanya", photoPath: "/Photos/Tanya.jpeg" },
+  kriti: { name: "Kriti", photoPath: "/Photos/Kriti.jpeg" }
 };
 
 function App() {
