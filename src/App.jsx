@@ -15,7 +15,7 @@ const friendsData = {
   arth: { name: "Arth", photoPath: "/src/assets/Arth.jpeg" },
   aakarsh: { name: "Aakarsh", photoPath: "/src/assets/Aakarsh.png" },
   tanya: { name: "Tanya", photoPath: "/src/assets/Tanya.jpeg" },
-  kriti: { name: "Kriti", photoPath: "/src/assets/kriti.jpeg" }
+  kriti: { name: "Kriti", photoPath: "/src/assets/Kriti.jpeg" }
 };
 
 function App() {

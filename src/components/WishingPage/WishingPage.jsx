@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Confetti from "../Confetti/Confetti";
+import songFile from "../../assets/song.mpeg?url";
 
 const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/src/assets/Arth.jpeg" }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [audioStarted, setAudioStarted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const audioRef = useRef(null);
 
   const fullText = `Happy New Year, ${friendName}! 💖
 
@@ -41,6 +43,12 @@ I'm really glad you exist 🌷`;
 
   const handlePhotoClick = () => {
     setIsClicked(true);
+    // Play music when clicked
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.log("Audio playback failed:", error);
+      });
+    }
   };
 
   const handleContinueClick = () => {
@@ -80,19 +88,23 @@ I'm really glad you exist 🌷`;
       transition={{ duration: 0.6 }}
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
+      <audio ref={audioRef} loop>
+        <source src={songFile} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       <Confetti isActive={showConfetti} count={100} />
       <div className="absolute inset-0 bg-gradient-to-br from-rose-100 via-pink-100 to-red-100" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[0, 1, 2, 3].map((i) => (
           <FloatingHeart key={`heart-${i}`} delay={i * 3.1} duration={5}
-            x={(Math.random() - 0.5) * window.innerWidth * 1.5} />
+            x={(Math.random() - 0.5) * window.innerWidth * 2.5} />
         ))}
         {[0, 1, 2, 3].map((i) => (
           <FloatingSparkle
             key={`sparkle-${i}`}
             delay={i * 3}
             duration={5}
-            x={(Math.random() - 0.5) * window.innerWidth * 1.5}
+            x={(Math.random() - 0.5) * window.innerWidth * 2.5}
           />
         ))}
       </div>
