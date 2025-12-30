@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Confetti from "../Confetti/Confetti";
 import songFile from "../../assets/song.mpeg?url";
 
-const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/src/assets/Arth.jpeg" }) => {
+const WishingPage = ({ onNext, friendName = "Friend", photoPath = "/assets/Arth.jpeg" }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [audioStarted, setAudioStarted] = useState(false);

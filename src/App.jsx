@@ -10,16 +10,12 @@ import WishingPage from "./components/WishingPage/WishingPage";
 import Balloons from "./components/Bullons/Balloons";
 import Confetti from "./components/Confetti/Confetti";
 import FloatingDecorations from "./components/FloatingDecorations/FloatingDecorations";
-import arthPhoto from "./assets/Arth.jpeg";
-import aakarshPhoto from "./assets/Aakarsh.png";
-import tanyaPhoto from "./assets/Tanya.jpeg";
-import kritiPhoto from "./assets/Kriti.jpeg";
 
 const friendsData = {
-  arth: { name: "Arth", photoPath: arthPhoto },
-  aakarsh: { name: "Aakarsh", photoPath: aakarshPhoto },
-  tanya: { name: "Tanya", photoPath: tanyaPhoto },
-  kriti: { name: "Kriti", photoPath: kritiPhoto }
+  arth: { name: "Arth", photoPath: "/assets/Arth.jpeg" },
+  aakarsh: { name: "Aakarsh", photoPath: "/assets/Aakarsh.png" },
+  tanya: { name: "Tanya", photoPath: "/assets/Tanya.jpeg" },
+  kriti: { name: "Kriti", photoPath: "/assets/Kriti.jpeg" }
 };
 
 function App() {
@@ -43,7 +39,7 @@ function App() {
     if (urlFriend && friendsData[urlFriend]) {
       return friendsData[urlFriend].photoPath;
     }
-    return arthPhoto; 
+    return "/assets/Arth.jpeg"; 
   };
 
   const handleNext = (nextStep) => {
