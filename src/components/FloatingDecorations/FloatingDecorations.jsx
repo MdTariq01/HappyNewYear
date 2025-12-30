@@ -36,15 +36,15 @@ const FloatingDecorations = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-10">
-      {/* Hearts */}
-      { <FloatingHeart
+      {[0, 1, 2, 3, 4].map((i) => (
+        <FloatingHeart
           key={`heart-${i}`}
           delay={i * 2.5}
           duration={6}
           x={(Math.random() - 0.5) * window.innerWidth * 1.2}
         />
       ))}
-      
+      {[0, 1, 2, 3, 4].map((i) => (
         <FloatingSparkle
           key={`sparkle-${i}`}
           delay={i * 2.3}
@@ -52,8 +52,8 @@ const FloatingDecorations = () => {
           x={(Math.random() - 0.5) * window.innerWidth * 1.3}
         />
       ))}
-      
-      {/* Flowers */}
+      {[0, 1, 2, 3].map((i) => (
+        <FloatingFlower
           key={`flower-${i}`}
           delay={i * 3}
           duration={7}

@@ -70,7 +70,7 @@ body {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Pulse effect */
+@keyframes pulse-soft {
   0%, 100% {
     opacity: 1;
   }
@@ -83,6 +83,6 @@ body {
   animation: pulse-soft 2s ease-in-out infinite;
 }
 
-/* Smooth text transitions */
+.transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
