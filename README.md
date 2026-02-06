@@ -108,6 +108,4 @@ This creates an optimized build in the `dist/` folder ready for deployment.
 
 Works on all modern browsers that support ES2020 and React 19.
 
-## License
 
-MIT
